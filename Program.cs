@@ -38,23 +38,3 @@ for(int i = 0; i < 3; i++)
 {
     System.Console.WriteLine($"{friends[i]} is {friendsAges[i]} years old");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
