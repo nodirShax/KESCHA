@@ -1,20 +1,36 @@
-﻿using System;
-using KESCHA.Classes;
+﻿using KESCHA.Classes;
 
-Animal kescha = new Animal(name : "Kescha", age : 3);
-System.Console.Write("Enter your name: ");
-string userName = Console.ReadLine();
-kescha.Greet(userName);
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        try
+        {
+            Animal kescha = new Pet("Kescha", 3);
+            Animal kasee = new Bird("Kasee", 2);
+            System.Console.WriteLine(kescha.CreatedDay);
+            System.Console.WriteLine(kasee.CreatedDay);
+            Console.Write("Enter your name: ");
+            string userName = Console.ReadLine();
+            kescha.Greet(userName);
+            kasee.Greet(userName);
 
-System.Console.Write("Enter yor age : ");
-string ageAsString = Console.ReadLine();
+            Console.Write("Enter yor age : ");
+            string ageAsString = Console.ReadLine();
 
-System.Console.WriteLine("Converting...");
-int userAge = Convert.ToInt32(ageAsString);
-System.Console.WriteLine("Convert Succesfully!");
+            Console.WriteLine("Converting...");
+            int userAge = Convert.ToInt32(ageAsString);
+            Console.WriteLine("Convert Succesfully!");
 
-kescha.CalculateAndPrintAgeDifferenceWithoutReturn(userAge);
-kescha.CompareAge(userAge);
-kescha.TelAboutFriends(userAge,userName);
-
-
+            kescha.CalculateAndPrintAgeDifferenceWithoutReturn(userAge);
+            kescha.CompareAge(userAge);
+            kescha.TelAboutFriends(userAge, userName);
+        }
+        catch (FormatException ex)
+        {
+            System.Console.WriteLine($"Error was thrown: Message:  {ex.Message}");            
+        }
+        System.Console.WriteLine("Programm ended...");
+        
+    }
+}
