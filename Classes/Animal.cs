@@ -1,3 +1,4 @@
+using KESCHA.Enums;
 namespace KESCHA.Classes
 {
     public abstract class Animal : IAnimal
@@ -6,6 +7,7 @@ namespace KESCHA.Classes
         public string Name { get; set; }
         public int AgeDifference { get; set; }
         public DateTimeOffset CreatedDay { get; set; }
+        public TypePet Type { get;set; }
         public Animal(int age,string name)
         {
             Age = age;

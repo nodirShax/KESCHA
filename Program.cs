@@ -1,7 +1,9 @@
 ﻿using KESCHA.Classes;
-
+using KESCHA.Enums;
 internal class Program
 {
+    public static TypePet Cat { get; private set; }
+
     private static void Main(string[] args)
     {
         try
@@ -15,6 +17,8 @@ internal class Program
             kescha.Greet(userName);
             kasee.Greet(userName);
 
+            kescha.Type = Cat;
+            System.Console.WriteLine(kescha.Type);
             Console.Write("Enter yor age : ");
             string ageAsString = Console.ReadLine();
 
